@@ -1,0 +1,11 @@
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="primesense_broadcaster" args="1.02810932275 -0.546178875821 0.801207460107 -0.404479151155 -0.614188881341 -0.157546607635 0.659050464565 base_link primesense 100" />
+  <node pkg="apriltags_ros" type="apriltag_detector_node" name="apriltag_detector" output="screen">
+    <rosparam param="tag_descriptions">[
+      {id: 0, size: 0.07, frame_id: id_0},
+      ]
+    </rosparam>
+    <rosparam param="sensor_frame_id">primesense</rosparam>
+    <remap from="image_rect" to="/camera/rgb/image_rect_color"/>
+  </node>
+</launch>

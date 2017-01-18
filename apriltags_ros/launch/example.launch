@@ -16,12 +16,11 @@
 
     <!-- Describe the tags -->
     <rosparam param="tag_descriptions">[
-      {id: 0, size: 0.163513},
-      {id: 1, size: 0.163513, frame_id: a_frame},
-      {id: 2, size: 0.163513, frame_id: tag_2},
-      {id: 3, size: 0.163513},
-      {id: 4, size: 0.163513},
-      {id: 5, size: 0.163513}]
+      {id: 0, size: 0.081, frame_id: id_0},
+      {id: 1, size: 0.032, frame_id: id_1}
+      ]
     </rosparam>
+    <rosparam param="sensor_frame_id">narrow_stereo_r_stereo_camera_optical_frame</rosparam>
+    <remap from="image_rect" to="/narrow_stereo/right/image_rect"/>
   </node>
 </launch>
