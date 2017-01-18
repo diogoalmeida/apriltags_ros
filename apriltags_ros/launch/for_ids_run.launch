@@ -1,0 +1,13 @@
+<launch>
+  <node name="usb_cam_proc" pkg="image_proc" type="image_proc" ns="camera"/>
+
+  <node pkg="tf" type="static_transform_publisher" name="usb_cam_broadcaster" args="1.21308644522 0.108534293992 0.666401647197 -0.517326268175 -0.525680204106 0.4755004641 0.479513094854 base_link camera 100" />
+  <node pkg="apriltags_ros" type="apriltag_detector_node" name="apriltag_detector" output="screen">
+    <rosparam param="tag_descriptions">[
+      {id: 0, size: 0.07, frame_id: id_0},
+      ]
+    </rosparam>
+    <rosparam param="sensor_frame_id">camera</rosparam>
+    <remap from="image_rect" to="/camera/image_rect"/>
+  </node>
+</launch>
